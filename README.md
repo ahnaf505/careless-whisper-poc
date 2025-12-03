@@ -29,7 +29,7 @@ uv sync
 3. Edit the message id in [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)  
    read [this section](#how-to-get-the-target-message-id) to obtain message id and configure [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)
 4. Add your own phone number in [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)  
-   this was used to detect if the message has been received by your own devices(phones, or other Whatsapp Web instance) and prevent false positive "delivered" message
+   this was used to detect if the message has been received by your own devices(phones, or other Whatsapp Web instance) and prevent false positive "delivered" message  
    The format must be exactly like this: (country code)123456789. For example, an Indonesian number would be written as 628123456789
 
    <img src=".img/self-pone-number.png" alt="Devtools" width="650"/>
@@ -66,6 +66,7 @@ uv run main.py
    <img src=".img/injectjs-message-id.png" alt="inject.js Message ID" width="650"/>
    
 7. Continue with the setup!
+
 
 
 
