@@ -1,4 +1,4 @@
-# Careless Whisper Proof of Concept
+# "Careless Whisper" Proof of Concept
 
 A Python based proof-of-concept for monitoring Round-Trip Time (RTT) of silent reaction delivery receipts in real-time messaging applications(Whatsapp), based on the research presented in [Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers](https://arxiv.org/abs/2411.11194) paper.
 
@@ -45,8 +45,11 @@ uv sync
    
    <img src=".img/message-id.png" alt="Message ID" width="650"/>
 
-7. 
+6. Edit message id in inject.js
 
+   <img src=".img/injectjs-message-id.png" alt="inject.js Message ID" width="650"/>
+   
+7. Continue with the setup!
 
 
 ## 🎮 Usage
@@ -63,4 +66,5 @@ uv sync
   year={2024}
 }
 ```
+
 
