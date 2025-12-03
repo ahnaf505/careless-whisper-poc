@@ -5,7 +5,8 @@ A Python based proof-of-concept for monitoring Round-Trip Time (RTT) of silent r
 The side-channel attack exploiting silent delivery receipts in WhatsApp and Signal was first documented by Gegenhuber et al. in their 2025 paper *"Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers."*
 
 ## Overview
-This proof-of-concept implements the silent delivery receipt RTT monitoring technique described in the paper by injecting a javascript snippet that will monitor for the "message/reaction delivered" packets that whatsapp sent via websockets, the js snippet will listen post E2EE decryption.
+This proof-of-concept implements the silent delivery receipt RTT monitoring technique described in the paper by injecting a javascript snippet that will monitor for the "message/reaction delivered" packets that whatsapp sent via websockets, the JS snippet will listen post E2EE decryption.  
+After hooking the post-descryption "delivered" message the JS will send 500000 reaction to the target message with a 1s interval, and it will start capturing the RTT time.
 
 
 ## 🛠️ Prerequisites
@@ -26,7 +27,19 @@ uv sync
 ```
 
 3. Edit the message id in [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)
-   read [this section](#how-to-get-the-target-message-id) to obtain message id and configure inject.js
+   read [this section](#how-to-get-the-target-message-id) to obtain message id and configure [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)
+4. Add your own phone number in [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)  
+   this was used to detect if the message has been received by your own devices(phones, or other Whatsapp Web instance) and prevent false positive "delivered" message
+
+   <img src=".img/self-pone-number.png" alt="Devtools" width="650"/>
+
+5. Run main.py:
+```bash
+uv run main.py
+```
+
+6. Wait for whatsapp web to finish loading and login using your phone, then press ENTER
+7. Wait until you have enough data sample, all of them are automatically saved on the `latency.db`.
 
 ## How to get the target message id
 1. Login to [WhatsApp Web](https://web.whatsapp.com) on your browser
@@ -53,10 +66,6 @@ uv sync
    
 7. Continue with the setup!
 
-
-## 🎮 Usage
-
-## 🔮 Future Work
 
 
 
