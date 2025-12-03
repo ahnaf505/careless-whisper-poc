@@ -2,6 +2,8 @@
 
 A Python based proof-of-concept for monitoring Round-Trip Time (RTT) of silent reaction delivery receipts in real-time messaging applications(Whatsapp), based on the research presented in [Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers](https://arxiv.org/abs/2411.11194) paper.
 
+The side-channel attack exploiting silent delivery receipts in WhatsApp and Signal was first documented by Gegenhuber et al. in their 2025 paper *"Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers."*
+
 ## Overview
 This proof-of-concept implements the silent delivery receipt RTT monitoring technique described in the paper by injecting a javascript snippet that will monitor for the "message/reaction delivered" packets that whatsapp sent via websockets, the js snippet will listen post E2EE decryption.
 
@@ -23,8 +25,8 @@ cd careless-whisper-poc
 uv sync
 ```
 
-3. Get target message id
-   Read [this section](#how-to-get-the-target-message-id) to get message id
+3. Edit the message id in [inject.js](https://github.com/ahnaf505/careless-whisper-poc/blob/main/inject.js)
+   read [this section](#how-to-get-the-target-message-id) to obtain message id and configure inject.js
 
 ## How to get the target message id
 1. Login to [WhatsApp Web](https://web.whatsapp.com) on your browser
@@ -56,15 +58,5 @@ uv sync
 
 ## 🔮 Future Work
 
-
-## 🏆 Citation
-
-```
-@article{gegenhuber2024careless,
-  title={Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers},
-  author={Gegenhuber, Gabriel K. and others},
-  year={2024}
-}
-```
 
 
