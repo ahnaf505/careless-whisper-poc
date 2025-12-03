@@ -13,7 +13,6 @@ CHROME_DIR = os.path.join(os.getcwd(), "chrome-data")
 if not os.path.exists(CHROME_DIR):
     os.makedirs(CHROME_DIR)
     print("Created chrome-data directory.")
--
 def init_db():
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
