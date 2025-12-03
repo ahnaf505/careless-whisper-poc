@@ -1,6 +1,6 @@
 # Careless Whisper Proof of Concept
 
-A Python based proof-of-concept for monitoring Round-Trip Time (RTT) of silent reaction delivery receipts in real-time messaging applications(Whatsapp), based on the research presented in ["Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers"](https://arxiv.org/abs/2411.11194)
+A Python based proof-of-concept for monitoring Round-Trip Time (RTT) of silent reaction delivery receipts in real-time messaging applications(Whatsapp), based on the research presented in [Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers](https://arxiv.org/abs/2411.11194) paper.
 
 ## Overview
 This proof-of-concept implements the silent delivery receipt RTT monitoring technique described in the paper by injecting a javascript snippet that will monitor for the "message/reaction delivered" packets that whatsapp sent via websockets, the js snippet will listen post E2EE decryption.
@@ -63,3 +63,4 @@ uv sync
   year={2024}
 }
 ```
+
